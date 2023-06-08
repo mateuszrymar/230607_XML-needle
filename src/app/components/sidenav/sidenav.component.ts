@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {NgIf} from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { InputClearableExample } from '../input/input.component';
 
 /**
  * @title Autosize sidenav
@@ -11,7 +12,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   templateUrl: 'sidenav.component.html',
   styleUrls: ['sidenav.component.scss'],
   standalone: true,
-  imports: [MatSidenavModule, NgIf, MatButtonModule],
+  imports: [MatSidenavModule, NgIf, MatButtonModule, InputClearableExample],
 })
 export class SidenavAutosizeExample {
   showFiller = false;
