@@ -3,6 +3,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {NgIf} from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { InputClearableExample } from '../input/input.component';
+import { FileLoaderService } from 'src/app/services/file-loader/file-loader.service';
 
 /**
  * @title Autosize sidenav
@@ -12,10 +13,24 @@ import { InputClearableExample } from '../input/input.component';
   templateUrl: 'sidenav.component.html',
   styleUrls: ['sidenav.component.scss'],
   standalone: true,
-  imports: [MatSidenavModule, NgIf, MatButtonModule, InputClearableExample],
+  imports: [
+    MatSidenavModule,
+    NgIf,
+    MatButtonModule,
+    InputClearableExample
+  ],
 })
 export class SidenavAutosizeExample {
-  showFiller = false;
+  public showFiller = false;
+
+  constructor (
+    private fileLoader: FileLoaderService
+  ) { }
+
+  handleDrop() {
+    event?.preventDefault();
+    this.fileLoader.loadFile();
+  }
 }
 
 

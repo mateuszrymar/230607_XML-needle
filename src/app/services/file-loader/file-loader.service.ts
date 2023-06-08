@@ -8,4 +8,8 @@ export class FileLoaderService {
   public isFileLoaded = false;
 
   constructor() { }
+
+  loadFile() {
+    console.log('File was dropped.');
+  }
 }
